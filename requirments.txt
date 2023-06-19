@@ -1,0 +1,5 @@
+requests
+django==4.2.2
+djangorestframework
+django-cors-headers
+pyyaml
