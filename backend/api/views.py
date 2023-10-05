@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from products.models import Product
 from products.serializers import ProductSerializer
 
+
 @api_view(["GET", "POST"])
 def home(request, *args, **kwargs):
     if request.method == "GET":
