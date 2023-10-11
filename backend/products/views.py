@@ -1,5 +1,6 @@
 from rest_framework import generics, permissions, authentication
 
+from api.authentication import BearerTokenAuthentification
 from .models import Product
 from .serializers import ProductSerializer
 
@@ -7,7 +8,7 @@ from .serializers import ProductSerializer
 class ListCreateProductApiView(generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    authentication_classes = [authentication.SessionAuthentication]
+    authentication_classes = [authentication.SessionAuthentication, BearerTokenAuthentification]
     permission_classes = [permissions.IsAuthenticated]
 
     def perform_create(self, serializer: ProductSerializer):
